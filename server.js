@@ -3,12 +3,14 @@ var app = express();
 var port = process.env.PORT || 8080;
 var morgan = require ('morgan'); /* Morgan is used for logging request details*/
 var mongoose = require('mongoose');
-var User = require('./app/models/user');
 var bodyParser = require('body-parser');
+var router = express.Router();
+var appRoutes = require('./app/routes/api')(router);
 
-
+app.use(morgan('dev'));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(appRoutes);
 
 
 mongoose.connect('mongodb://localhost:27017/library', function(err){
@@ -19,27 +21,9 @@ mongoose.connect('mongodb://localhost:27017/library', function(err){
     }
 });
 
-app.post('/users', function(req, res){
-  var user = new User();
-    user.username = req.body.username;
-    user.password = req.body.password;
-    user.email = req.body.email;
-    if(req.body.username== null || req.body.username== ''||req.body.password== null || req.body.password== '' || req.body.email== null || req.body.email=- ''){
-        res.send("Ensure username, email and password were provided");
-    }else{
-            user.save(function(err){
-        if (err) {
-            res.send("username already exists");
-        }else{
-          res.send("user created");  
-        }
-    });
-    }
 
-    
-});
 
-app.use(morgan('dev'));
+
 app.listen(port, function(){
     console.log("Running the server on port"+' ' + port);
 });
