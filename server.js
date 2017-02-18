@@ -24,8 +24,19 @@ app.post('/users', function(req, res){
     user.username = req.body.username;
     user.password = req.body.password;
     user.email = req.body.email;
-    user.save();
-    res.send("user created");
+    if(req.body.username== null || req.body.username== ''||req.body.password== null || req.body.password== '' || req.body.email== null || req.body.email=- ''){
+        res.send("Ensure username, email and password were provided");
+    }else{
+            user.save(function(err){
+        if (err) {
+            res.send("username already exists");
+        }else{
+          res.send("user created");  
+        }
+    });
+    }
+
+    
 });
 
 app.use(morgan('dev'));
