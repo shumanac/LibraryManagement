@@ -7,7 +7,7 @@ module.exports = function(router){
     user.username = req.body.username;
     user.password = req.body.password;
     user.email = req.body.email;
-    if(req.body.username == null || req.body.username == ''||req.body.password == null || req.body.password == '' || req.body.email== null || req.body.email=- ''){
+    if(req.body.username == null || req.body.username == ''||req.body.password == null || req.body.password == '' || req.body.email== null || req.body.email==''){
         res.send("Ensure username, email and password were provided");
     }else{
             user.save(function(err){
