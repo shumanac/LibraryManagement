@@ -1,6 +1,11 @@
+//angular.module('userApp', [])
+//    .controller('HelloWorldCtrl', [function() {
+//       this.HelloMessage = 'Hello';
+//  }]);
 
-angular.module('userApp', [])
 
-.config(function(){
-    console.log("testing user app");
-});
+       angular.module('myapp', []).controller('HelloWorldCtrl', function($scope){
+      $scope.helloMessage = "Hello Mohammad";
+           console.log("workingg");
+      });
+    
