@@ -55,6 +55,13 @@ app.set('view engine', 'handlebars');
 
 
 
+//===============ROUTES===============
+
+
+app.get('*', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
+});
+
 
 
 
@@ -68,24 +75,19 @@ mongoose.connect('mongodb://localhost:27017/library', function(err){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.get('*', function(req, res){
-    res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
-});
-
-
+//===============PORT=================
 app.listen(port, function(){
     console.log("Running the server on port"+' ' + port);
 });
+
+
+
+
+
+
+
+
+
+
+
+
