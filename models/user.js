@@ -7,10 +7,11 @@ var db = mongoose.connection;
 
 
 var UserSchema = new Schema({
-    username:{type:String, index: true, lowercase:true, required:true, unique:true },
     name:{type:String, lowercase:true, required:true, unique:true }, 
-    password:{type:String, required:true},
-    email:{type:String, lowercase:true, required:true, unique:true }
+    username:{type:String, index: true, lowercase:true, required:true, unique:true },
+     email:{type:String, lowercase:true, required:true, unique:true },
+    password:{type:String, required:true}
+   
 });
 
 //UserSchema.pre('save', function(next) {
