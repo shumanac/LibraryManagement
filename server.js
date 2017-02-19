@@ -4,20 +4,19 @@ var morgan = require ('morgan'); /* Morgan is used for logging request details*/
 var mongoose = require('mongoose');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-//var router = express.Router();
+var router = express.Router();
 //var appRoutes = require('./app/routes/api')(router);
 var path = require('path');
 var flash = require('connect-flash');
 
 //var methodOverride = require('method-override'),
-var exphbs = require('express-handlebars'),
-var session = require('express-session'),
-var passport = require('passport'),
-var LocalStrategy = require('passport-local'),
+var exphbs = require('express-handlebars');
+var session = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
 var expressValidator = require('express-validator');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+
 
 
 
@@ -25,7 +24,8 @@ var users = require('./routes/users');
 
 var app = express();
 
-
+var routes = require('./routes/index');
+var users = require('./routes/users');
 
 //app.use('/api', appRoutes);
 
@@ -79,7 +79,7 @@ app.use(flash());
 
 //Global vars
 
-app.user(function(req, res, next){
+app.use(function(req, res, next){
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
