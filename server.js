@@ -9,6 +9,7 @@ var appRoutes = require('./app/routes/api')(router);
 var path = require('path');
 
 var methodOverride = require('method-override'),
+    exphbs = require('express-handlebars'),
     session = require('express-session'),
     passport = require('passport'),
     LocalStrategy = require('passport-local'),
@@ -20,7 +21,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.static(__dirname + '/public'));
-//app.use('/api', appRoutes);
+app.use('/api', appRoutes);
 
 
 app.use(methodOverride('X-HTTP-Method-Override'));
@@ -47,7 +48,7 @@ app.use(function(req, res, next){
 
 // Configure express to use handlebars templates
 var hbs = exphbs.create({
-    defaultLayout: 'main', //we will be creating this layout shortly
+    defaultLayout: 'index', //we will be creating this layout shortly
 });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
