@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8080; //select your port or let it pull from your .env file
 var morgan = require ('morgan'); /* Morgan is used for logging request details*/
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
