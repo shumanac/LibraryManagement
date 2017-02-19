@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
 
 //Get Register
 
@@ -14,7 +16,7 @@ router.get('/register', function(req, res){
 router.get('/login', function(req, res){
     res.render('login');
 });
-module.exports = router;
+
 
 //Register user
 
@@ -55,3 +57,35 @@ router.post('/register', function(req, res){
         res.redirect('/users/login');
     }
 });
+
+//passport for login
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+      User.getUserByUsername(username, function(err, user){
+          
+          if(err)throw err;
+          if(!user){
+              return done(null, false, {message: 'Unknown User'});
+          }
+          User.comparePassword(password, user.password, function(err, isMatch){
+              if(err)throw err;
+              if(isMatch){
+                  return done(null, user);
+              }else{
+                  return done(null, false, {message: 'Invalid Password'});
+              }
+          });
+      });
+  }));
+
+
+
+app.post('/login',
+  passport.authenticate('local', {successRedirect:'/', failureRedirect:'/users/login', failureFlash: true}),
+  function(req, res) {
+    res.redirect('/');
+  });
+
+
+module.exports = router;

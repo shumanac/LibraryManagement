@@ -11,8 +11,6 @@ var flash = require('connect-flash');
 //var methodOverride = require('method-override'),
 var exphbs = require('express-handlebars');
 var session = require('express-session');
-var passport = require('passport');
-var LocalStrategy = require('passport-local');
 var expressValidator = require('express-validator');
 
 
