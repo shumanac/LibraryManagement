@@ -36,7 +36,7 @@ router.post('/register', function(req, res){
     if(errors){
        res.render('register', {
            errors:errors
-       })
+       });
         
     }else{
         console.log("passed");
