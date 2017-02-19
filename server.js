@@ -3,6 +3,7 @@ var app = express();
 var port = process.env.PORT || 8080; //select your port or let it pull from your .env file
 var morgan = require ('morgan'); /* Morgan is used for logging request details*/
 var mongoose = require('mongoose');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var router = express.Router();
 var appRoutes = require('./app/routes/api')(router);
@@ -60,7 +61,7 @@ app.set('view engine', 'handlebars');
 
 //displays our homepage
 app.get('/', function(req, res){
-  res.render('home', {user: req.user});
+  res.render('/home', {user: req.user});
 });
 
 //displays our signup page
@@ -86,7 +87,7 @@ app.post('/login', passport.authenticate('local-signin', {
 
 
 app.get('*', function(req, res){
-    res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
+    res.sendFile(path.join(__dirname + '/public/app/views/home'));
 });
 
 
