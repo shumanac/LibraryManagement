@@ -18,13 +18,13 @@ var expressValidator = require('express-validator');
 
 
 
+
 //init app
 
 var app = express();
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
 
 
 
@@ -52,6 +52,8 @@ app.use(session({secret: 'supernova', saveUninitialized: true, resave: true}));
 //Passport init
 app.use(passport.initialize());
 app.use(passport.session());
+// Set up middleware
+var requireAuth = passport.authenticate('jwt', { session: false });
 //Express Validator
 
 app.use(expressValidator({
@@ -70,6 +72,13 @@ app.use(expressValidator({
     };
   }
 }));
+
+
+
+  
+
+
+
 
 //Connect flash
 

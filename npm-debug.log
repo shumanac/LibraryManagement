@@ -1,0 +1,326 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install', 'jwt' ]
+2 info using npm@2.15.1
+3 info using node@v4.4.3
+4 verbose install initial load of /Users/shumanachowdhury/Desktop/Codetest/package.json
+5 warn package.json codetest@1.0.0 No description
+6 warn package.json codetest@1.0.0 No repository field.
+7 warn package.json codetest@1.0.0 No README data
+8 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/bcrypt-nodejs/package.json
+9 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/body-parser/package.json
+10 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/connect-flash/package.json
+11 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/cookie-parser/package.json
+12 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/express/package.json
+13 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/express-handlebars/package.json
+14 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/express-session/package.json
+15 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/express-validator/package.json
+16 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/jsonwebtoken/package.json
+17 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/method-override/package.json
+18 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/mongodb/package.json
+19 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/mongoose/package.json
+20 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/morgan/package.json
+21 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/passport/package.json
+22 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/passport-facebook/package.json
+23 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/passport-google/package.json
+24 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/passport-local/package.json
+25 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/passport-twitter/package.json
+26 verbose installManyTop reading scoped package data from /Users/shumanachowdhury/Desktop/Codetest/node_modules/q/package.json
+27 info package.json connect-flash@0.1.1 No license field.
+28 info package.json passport-local@1.0.0 No license field.
+29 info package.json passport-facebook@1.0.3 No license field.
+30 info package.json passport-google@0.3.0 No license field.
+31 info package.json q@1.4.1 license should be a valid SPDX license expression
+32 info package.json bcrypt-nodejs@0.0.3 No license field.
+33 verbose readDependencies loading dependencies from /Users/shumanachowdhury/Desktop/Codetest/package.json
+34 silly cache add args [ 'jwt', null ]
+35 verbose cache add spec jwt
+36 silly cache add parsed spec Result {
+36 silly cache add   raw: 'jwt',
+36 silly cache add   scope: null,
+36 silly cache add   name: 'jwt',
+36 silly cache add   rawSpec: '',
+36 silly cache add   spec: 'latest',
+36 silly cache add   type: 'tag' }
+37 silly addNamed jwt@latest
+38 verbose addNamed "latest" is being treated as a dist-tag for jwt
+39 info addNameTag [ 'jwt', 'latest' ]
+40 silly mapToRegistry name jwt
+41 silly mapToRegistry using default registry
+42 silly mapToRegistry registry https://registry.npmjs.org/
+43 silly mapToRegistry data Result {
+43 silly mapToRegistry   raw: 'jwt',
+43 silly mapToRegistry   scope: null,
+43 silly mapToRegistry   name: 'jwt',
+43 silly mapToRegistry   rawSpec: '',
+43 silly mapToRegistry   spec: 'latest',
+43 silly mapToRegistry   type: 'tag' }
+44 silly mapToRegistry uri https://registry.npmjs.org/jwt
+45 verbose addNameTag registry:https://registry.npmjs.org/jwt not in flight; fetching
+46 verbose request uri https://registry.npmjs.org/jwt
+47 verbose request no auth needed
+48 info attempt registry request try #1 at 5:23:36 AM
+49 verbose request id de596c1113016af6
+50 verbose etag W/"5852381a-1435"
+51 verbose lastModified Thu, 15 Dec 2016 06:28:42 GMT
+52 http request GET https://registry.npmjs.org/jwt
+53 http 304 https://registry.npmjs.org/jwt
+54 verbose headers { date: 'Sun, 19 Feb 2017 10:23:36 GMT',
+54 verbose headers   via: '1.1 varnish',
+54 verbose headers   'cache-control': 'max-age=300',
+54 verbose headers   etag: 'W/"5852381a-1435"',
+54 verbose headers   age: '149',
+54 verbose headers   connection: 'keep-alive',
+54 verbose headers   'x-served-by': 'cache-jfk8151-JFK',
+54 verbose headers   'x-cache': 'HIT',
+54 verbose headers   'x-cache-hits': '1',
+54 verbose headers   'x-timer': 'S1487499816.664347,VS0,VE0',
+54 verbose headers   vary: 'Accept-Encoding' }
+55 silly get cb [ 304,
+55 silly get   { date: 'Sun, 19 Feb 2017 10:23:36 GMT',
+55 silly get     via: '1.1 varnish',
+55 silly get     'cache-control': 'max-age=300',
+55 silly get     etag: 'W/"5852381a-1435"',
+55 silly get     age: '149',
+55 silly get     connection: 'keep-alive',
+55 silly get     'x-served-by': 'cache-jfk8151-JFK',
+55 silly get     'x-cache': 'HIT',
+55 silly get     'x-cache-hits': '1',
+55 silly get     'x-timer': 'S1487499816.664347,VS0,VE0',
+55 silly get     vary: 'Accept-Encoding' } ]
+56 verbose etag https://registry.npmjs.org/jwt from cache
+57 verbose get saving jwt to /Users/shumanachowdhury/.npm/registry.npmjs.org/jwt/.cache.json
+58 verbose correctMkdir /Users/shumanachowdhury/.npm correctMkdir not in flight; initializing
+59 silly addNameTag next cb for jwt with tag latest
+60 silly addNamed jwt@0.2.0
+61 verbose addNamed "0.2.0" is a plain semver version for jwt
+62 silly cache afterAdd jwt@0.2.0
+63 verbose afterAdd /Users/shumanachowdhury/.npm/jwt/0.2.0/package/package.json not in flight; writing
+64 verbose correctMkdir /Users/shumanachowdhury/.npm correctMkdir not in flight; initializing
+65 verbose afterAdd /Users/shumanachowdhury/.npm/jwt/0.2.0/package/package.json written
+66 silly install resolved [ { name: 'jwt',
+66 silly install resolved     description: 'JSON Web Token for node.js',
+66 silly install resolved     version: '0.2.0',
+66 silly install resolved     repository:
+66 silly install resolved      { type: 'git',
+66 silly install resolved        url: 'git://github.com/mattrobenolt/jwt-node.git' },
+66 silly install resolved     author: { name: 'Michael Hanson/Matt Robenolt' },
+66 silly install resolved     main: './lib/jwt',
+66 silly install resolved     directories: { lib: 'lib' },
+66 silly install resolved     engines: { node: '*' },
+66 silly install resolved     dependencies: { 'node-base64': '0.0.1' },
+66 silly install resolved     _npmUser: { name: 'mattrobenolt', email: 'matt@ydekproductions.com' },
+66 silly install resolved     _id: 'jwt@0.2.0',
+66 silly install resolved     devDependencies: {},
+66 silly install resolved     optionalDependencies: {},
+66 silly install resolved     _engineSupported: true,
+66 silly install resolved     _npmVersion: '1.1.9',
+66 silly install resolved     _nodeVersion: 'v0.6.13',
+66 silly install resolved     _defaultsLoaded: true,
+66 silly install resolved     dist:
+66 silly install resolved      { shasum: '4c9ad46bc84bfeaf91556ecce7c57aa578cbc8b8',
+66 silly install resolved        tarball: 'https://registry.npmjs.org/jwt/-/jwt-0.2.0.tgz' },
+66 silly install resolved     readme: '# jwt-node\n  \n  A slight adaptation of [jwt-js](https://github.com/michaelrhanson/jwt-js) for Node.\n  \n     var jwt = require(\'jwt\'),\n         payload = {\n             scope: \'client:outgoing?clientName=matt\',\n             iss: \'APP_SID\',\n             expires: Math.round((new Date().getTime()/1000)) + 3600\n         },\n         token = new jwt.WebToken(JSON.stringify(payload), JSON.stringify({typ:\'JWT\', alg:\'HS256\'}));\n      console.log(token.serialize(\'hmackey\'));\n\n## Installation\n  \n     $ npm install jwt\n\n## Known Issues\n  \n  * _none_\n\n## Licenses\n\nVersion: MPL 1.1/GPL 2.0/LGPL 2.1\n\nThe contents of this file are subject to the Mozilla Public License Version\n1.1 (the "License"); you may not use this file except in compliance with\nthe License. You may obtain a copy of the License at\nhttp://www.mozilla.org/MPL/\n\nSoftware distributed under the License is distributed on an "AS IS" basis,\nWITHOUT WARRANTY OF ANY KIND, either express or implied. See the License\nfor the specific language governing rights and limitations under the\nLicense.\n\nContributor(s):\n  Michael Hanson <mhanson@mozilla.com>\n\nAlternatively, the contents of this file may be used under the terms of\neither the GNU General Public License Version 2 or later (the "GPL"), or\nthe GNU Lesser General Public License Version 2.1 or later (the "LGPL"),\nin which case the provisions of the GPL or the LGPL are applicable instead\nof those above. If you wish to allow use of your version of this file only\nunder the terms of either the GPL or the LGPL, and not to allow others to\nuse your version of this file under the terms of the MPL, indicate your\ndecision by deleting the provisions above and replace them with the notice\nand other provisions required by the GPL or the LGPL. If you do not delete\nthe provisions above, a recipient may use your version of this file under\nthe terms of any one of the MPL, the GPL or the LGPL.\n\n\n\nCopyright (c) 2011 Matt Robenolt &lt;root@drund.com&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\'Software\'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n',
+66 silly install resolved     maintainers: [ [Object] ],
+66 silly install resolved     _shasum: '4c9ad46bc84bfeaf91556ecce7c57aa578cbc8b8',
+66 silly install resolved     _resolved: 'https://registry.npmjs.org/jwt/-/jwt-0.2.0.tgz',
+66 silly install resolved     _from: 'jwt@latest',
+66 silly install resolved     bugs: { url: 'https://github.com/mattrobenolt/jwt-node/issues' },
+66 silly install resolved     homepage: 'https://github.com/mattrobenolt/jwt-node#readme' } ]
+67 info install jwt@0.2.0 into /Users/shumanachowdhury/Desktop/Codetest
+68 info installOne jwt@0.2.0
+69 verbose installOne of jwt to /Users/shumanachowdhury/Desktop/Codetest not in flight; installing
+70 verbose correctMkdir /Users/shumanachowdhury/.npm/_locks correctMkdir not in flight; initializing
+71 verbose lock using /Users/shumanachowdhury/.npm/_locks/jwt-1b6600344689eac4.lock for /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt
+72 silly install write writing jwt 0.2.0 to /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt
+73 verbose unbuild node_modules/jwt
+74 silly gentlyRm /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt is being purged from base /Users/shumanachowdhury/Desktop/Codetest
+75 verbose gentlyRm don't care about contents; nuking /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt
+76 verbose tar unpack /Users/shumanachowdhury/.npm/jwt/0.2.0/package.tgz
+77 verbose tar unpacking to /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt
+78 silly gentlyRm /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt is being purged
+79 verbose gentlyRm don't care about contents; nuking /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt
+80 silly gunzTarPerm modes [ '755', '644' ]
+81 silly gunzTarPerm extractEntry .npmignore
+82 silly gunzTarPerm extractEntry lib/
+83 silly gunzTarPerm extractEntry lib/jwt.js
+84 silly gunzTarPerm extractEntry package.json
+85 silly gunzTarPerm extractEntry README.md
+86 verbose write writing to /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/package.json
+87 info preinstall jwt@0.2.0
+88 verbose readDependencies loading dependencies from /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/package.json
+89 silly prepareForInstallMany adding node-base64@0.0.1 from jwt dependencies
+90 verbose readDependencies loading dependencies from /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/package.json
+91 silly cache add args [ 'node-base64@0.0.1', null ]
+92 verbose cache add spec node-base64@0.0.1
+93 silly cache add parsed spec Result {
+93 silly cache add   raw: 'node-base64@0.0.1',
+93 silly cache add   scope: null,
+93 silly cache add   name: 'node-base64',
+93 silly cache add   rawSpec: '0.0.1',
+93 silly cache add   spec: '0.0.1',
+93 silly cache add   type: 'version' }
+94 silly addNamed node-base64@0.0.1
+95 verbose addNamed "0.0.1" is a plain semver version for node-base64
+96 silly mapToRegistry name node-base64
+97 silly mapToRegistry using default registry
+98 silly mapToRegistry registry https://registry.npmjs.org/
+99 silly mapToRegistry data Result {
+99 silly mapToRegistry   raw: 'node-base64',
+99 silly mapToRegistry   scope: null,
+99 silly mapToRegistry   name: 'node-base64',
+99 silly mapToRegistry   rawSpec: '',
+99 silly mapToRegistry   spec: 'latest',
+99 silly mapToRegistry   type: 'tag' }
+100 silly mapToRegistry uri https://registry.npmjs.org/node-base64
+101 verbose addNameVersion registry:https://registry.npmjs.org/node-base64 not in flight; fetching
+102 verbose request uri https://registry.npmjs.org/node-base64
+103 verbose request no auth needed
+104 info attempt registry request try #1 at 5:23:36 AM
+105 verbose etag W/"4da8b857-40a"
+106 verbose lastModified Fri, 15 Apr 2011 21:27:51 GMT
+107 http request GET https://registry.npmjs.org/node-base64
+108 http 304 https://registry.npmjs.org/node-base64
+109 verbose headers { date: 'Sun, 19 Feb 2017 10:23:36 GMT',
+109 verbose headers   via: '1.1 varnish',
+109 verbose headers   'cache-control': 'max-age=300',
+109 verbose headers   etag: 'W/"4da8b857-40a"',
+109 verbose headers   age: '149',
+109 verbose headers   connection: 'keep-alive',
+109 verbose headers   'x-served-by': 'cache-jfk8151-JFK',
+109 verbose headers   'x-cache': 'HIT',
+109 verbose headers   'x-cache-hits': '1',
+109 verbose headers   'x-timer': 'S1487499816.811992,VS0,VE0',
+109 verbose headers   vary: 'Accept-Encoding' }
+110 silly get cb [ 304,
+110 silly get   { date: 'Sun, 19 Feb 2017 10:23:36 GMT',
+110 silly get     via: '1.1 varnish',
+110 silly get     'cache-control': 'max-age=300',
+110 silly get     etag: 'W/"4da8b857-40a"',
+110 silly get     age: '149',
+110 silly get     connection: 'keep-alive',
+110 silly get     'x-served-by': 'cache-jfk8151-JFK',
+110 silly get     'x-cache': 'HIT',
+110 silly get     'x-cache-hits': '1',
+110 silly get     'x-timer': 'S1487499816.811992,VS0,VE0',
+110 silly get     vary: 'Accept-Encoding' } ]
+111 verbose etag https://registry.npmjs.org/node-base64 from cache
+112 verbose get saving node-base64 to /Users/shumanachowdhury/.npm/registry.npmjs.org/node-base64/.cache.json
+113 verbose correctMkdir /Users/shumanachowdhury/.npm correctMkdir not in flight; initializing
+114 silly cache afterAdd node-base64@0.0.1
+115 verbose afterAdd /Users/shumanachowdhury/.npm/node-base64/0.0.1/package/package.json not in flight; writing
+116 verbose correctMkdir /Users/shumanachowdhury/.npm correctMkdir not in flight; initializing
+117 verbose afterAdd /Users/shumanachowdhury/.npm/node-base64/0.0.1/package/package.json written
+118 silly install resolved [ { name: 'node-base64',
+118 silly install resolved     version: '0.0.1',
+118 silly install resolved     main: './build/default',
+118 silly install resolved     description: 'Node.js module for base64 encoding and decoding.',
+118 silly install resolved     scripts: { install: './install.sh' },
+118 silly install resolved     dependencies: {},
+118 silly install resolved     _id: 'node-base64@0.0.1',
+118 silly install resolved     engines: { node: '*' },
+118 silly install resolved     _nodeSupported: true,
+118 silly install resolved     _npmVersion: '0.2.7-2',
+118 silly install resolved     _nodeVersion: 'v0.3.1-pre',
+118 silly install resolved     dist:
+118 silly install resolved      { tarball: 'https://registry.npmjs.org/node-base64/-/node-base64-0.0.1.tgz',
+118 silly install resolved        bin: [Object],
+118 silly install resolved        shasum: 'ee3e095f97e9f4d72fb3dea98bcb2d25c8716b03' },
+118 silly install resolved     directories: {},
+118 silly install resolved     _shasum: 'ee3e095f97e9f4d72fb3dea98bcb2d25c8716b03',
+118 silly install resolved     _resolved: 'https://registry.npmjs.org/node-base64/-/node-base64-0.0.1.tgz',
+118 silly install resolved     _from: 'node-base64@0.0.1',
+118 silly install resolved     readme: 'ERROR: No README data found!' } ]
+119 info install node-base64@0.0.1 into /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt
+120 info installOne node-base64@0.0.1
+121 verbose installOne of node-base64 to /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt not in flight; installing
+122 verbose correctMkdir /Users/shumanachowdhury/.npm/_locks correctMkdir not in flight; initializing
+123 verbose lock using /Users/shumanachowdhury/.npm/_locks/node-base64-03d081ddc2f29eca.lock for /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64
+124 silly install write writing node-base64 0.0.1 to /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64
+125 verbose unbuild node_modules/jwt/node_modules/node-base64
+126 silly gentlyRm /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64 is being purged from base /Users/shumanachowdhury/Desktop/Codetest
+127 verbose gentlyRm don't care about contents; nuking /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64
+128 verbose tar unpack /Users/shumanachowdhury/.npm/node-base64/0.0.1/package.tgz
+129 verbose tar unpacking to /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64
+130 silly gentlyRm /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64 is being purged
+131 verbose gentlyRm don't care about contents; nuking /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64
+132 silly gunzTarPerm modes [ '755', '644' ]
+133 silly gunzTarPerm extractEntry
+134 silly gunzTarPerm extractEntry .gitignore
+135 silly gunzTarPerm extractEntry base64.cc
+136 silly gunzTarPerm extractEntry install.sh
+137 silly gunzTarPerm extractEntry js_base64_for_comparsion.js
+138 silly gunzTarPerm extractEntry makefile
+139 silly gunzTarPerm extractEntry package.json
+140 silly gunzTarPerm extractEntry README.md
+141 silly gunzTarPerm extractEntry test.js
+142 silly gunzTarPerm extractEntry test.php
+143 silly gunzTarPerm extractEntry wscript
+144 verbose write writing to /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64/package.json
+145 info preinstall node-base64@0.0.1
+146 verbose readDependencies loading dependencies from /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64/package.json
+147 verbose readDependencies loading dependencies from /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64/package.json
+148 silly install resolved []
+149 verbose about to build /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64
+150 info build /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64
+151 info linkStuff node-base64@0.0.1
+152 silly linkStuff node-base64@0.0.1 has /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules as its parent node_modules
+153 verbose linkBins node-base64@0.0.1
+154 verbose linkMans node-base64@0.0.1
+155 verbose rebuildBundles node-base64@0.0.1
+156 info install node-base64@0.0.1
+157 verbose unsafe-perm in lifecycle true
+158 info node-base64@0.0.1 Failed to exec install script
+159 verbose unlock done using /Users/shumanachowdhury/.npm/_locks/node-base64-03d081ddc2f29eca.lock for /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64
+160 verbose about to build /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt
+161 verbose unlock done using /Users/shumanachowdhury/.npm/_locks/jwt-1b6600344689eac4.lock for /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt
+162 verbose stack Error: node-base64@0.0.1 install: `./install.sh`
+162 verbose stack spawn ENOENT
+162 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:17:16)
+162 verbose stack     at emitTwo (events.js:87:13)
+162 verbose stack     at ChildProcess.emit (events.js:172:7)
+162 verbose stack     at maybeClose (internal/child_process.js:827:16)
+162 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+163 verbose pkgid node-base64@0.0.1
+164 verbose cwd /Users/shumanachowdhury/Desktop/Codetest
+165 error Darwin 16.3.0
+166 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "jwt"
+167 error node v4.4.3
+168 error npm  v2.15.1
+169 error file sh
+170 error code ELIFECYCLE
+171 error errno ENOENT
+172 error syscall spawn
+173 error node-base64@0.0.1 install: `./install.sh`
+173 error spawn ENOENT
+174 error Failed at the node-base64@0.0.1 install script './install.sh'.
+174 error This is most likely a problem with the node-base64 package,
+174 error not with npm itself.
+174 error Tell the author that this fails on your system:
+174 error     ./install.sh
+174 error You can get information on how to open an issue for this project with:
+174 error     npm bugs node-base64
+174 error Or if that isn't available, you can get their info via:
+174 error
+174 error     npm owner ls node-base64
+174 error There is likely additional logging output above.
+175 verbose exit [ 1, true ]
+176 verbose unbuild node_modules/jwt/node_modules/node-base64
+177 info preuninstall node-base64@0.0.1
+178 info uninstall node-base64@0.0.1
+179 verbose unbuild rmStuff node-base64@0.0.1 from /Users/shumanachowdhury/Desktop/Codetest/node_modules
+180 verbose unbuild rmStuff in /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules
+181 info postuninstall node-base64@0.0.1
+182 silly gentlyRm /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64 is being purged from base /Users/shumanachowdhury/Desktop/Codetest
+183 verbose gentlyRm don't care about contents; nuking /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64
+184 silly vacuum-fs purging /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules/node-base64
+185 silly vacuum-fs removing /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt/node_modules
+186 silly vacuum-fs quitting because other entries in /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt
+187 verbose unbuild node_modules/jwt
+188 info preuninstall jwt@0.2.0
+189 info uninstall jwt@0.2.0
+190 verbose unbuild rmStuff jwt@0.2.0 from /Users/shumanachowdhury/Desktop/Codetest/node_modules
+191 info postuninstall jwt@0.2.0
+192 silly gentlyRm /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt is being purged from base /Users/shumanachowdhury/Desktop/Codetest
+193 verbose gentlyRm don't care about contents; nuking /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt
+194 silly vacuum-fs purging /Users/shumanachowdhury/Desktop/Codetest/node_modules/jwt
+195 silly vacuum-fs quitting because other entries in /Users/shumanachowdhury/Desktop/Codetest/node_modules
