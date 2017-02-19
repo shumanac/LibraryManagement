@@ -51,7 +51,9 @@ app.use(express.static(path.join(__dirname,'/public')));
 
 app.use(session({secret: 'supernova', saveUninitialized: true, resave: true}));
 
-
+//Passport init
+app.use(passport.initialize());
+app.use(passport.session());
 //Express Validator
 
 app.use(expressValidator({
@@ -70,6 +72,30 @@ app.use(expressValidator({
     };
   }
 }));
+
+//Connect flash
+
+app.use(flash());
+
+//Global vars
+
+app.user(function(req, res, next){
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next();
+});
+
+app.use('/', routes);
+app.use('/users', users);
+
+//===============PORT=================
+app.listen(port, function(){
+    console.log("Running the server on port"+' ' + port);
+});
+
+
+
 
 
 //app.use(methodOverride('X-HTTP-Method-Override'));
@@ -196,10 +222,6 @@ app.use(expressValidator({
 //  }
 //));
 
-//===============PORT=================
-app.listen(port, function(){
-    console.log("Running the server on port"+' ' + port);
-});
 
 
 
