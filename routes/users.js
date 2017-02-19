@@ -39,7 +39,7 @@ router.post('/register', function(req, res){
     if(errors){
        res.render('register', {
            errors:errors
-       });
+       })
         
     }else{
        var newUser = new User({
@@ -47,7 +47,7 @@ router.post('/register', function(req, res){
            email:email,
            username:username,
            password:password
-       });
+       })
         User.createUser(newUser, function(){
             if(err)throw err;
             console.log(user);
@@ -89,10 +89,8 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-router.post('/login',
-  passport.authenticate('local', {successRedirect:'/', failureRedirect:'/users/login', failureFlash: true}),
-  function(req, res) {
-    res.redirect('/');
+router.post('/login', passport.authenticate('local', {successRedirect:'/', failureRedirect:'/users/login', failureFlash: true}),function(req, res) {
+    res.redirect('/')
   });
 
 
