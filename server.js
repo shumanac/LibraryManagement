@@ -58,6 +58,32 @@ app.set('view engine', 'handlebars');
 
 //===============ROUTES===============
 
+//displays our homepage
+app.get('/', function(req, res){
+  res.render('home', {user: req.user});
+});
+
+//displays our signup page
+app.get('/signin', function(req, res){
+  res.render('signin');
+});
+
+
+//sends the request through our local signup strategy, and if successful takes user to homepage, otherwise returns then to signin page
+app.post('/local-reg', passport.authenticate('local-signup', {
+  successRedirect: '/',
+  failureRedirect: '/signin'
+  })
+);
+
+//sends the request through our local login/signin strategy, and if successful takes user to homepage, otherwise returns then to signin page
+app.post('/login', passport.authenticate('local-signin', {
+  successRedirect: '/',
+  failureRedirect: '/signin'
+  })
+);
+
+
 
 app.get('*', function(req, res){
     res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
@@ -75,6 +101,52 @@ mongoose.connect('mongodb://localhost:27017/library', function(err){
 });
 
 
+
+//===============PASSPORT=================
+// Use the LocalStrategy within Passport to login/"signin" users.
+passport.use('local-signin', new LocalStrategy(
+  {passReqToCallback : true}, //allows us to pass back the request to the callback
+  function(req, username, password, done) {
+    funct.localAuth(username, password)
+    .then(function (user) {
+      if (user) {
+        console.log("LOGGED IN AS: " + user.username);
+        req.session.success = 'You are successfully logged in ' + user.username + '!';
+        done(null, user);
+      }
+      if (!user) {
+        console.log("COULD NOT LOG IN");
+        req.session.error = 'Could not log user in. Please try again.'; //inform user could not log them in
+        done(null, user);
+      }
+    })
+    .fail(function (err){
+      console.log(err.body);
+    });
+  }
+));
+// Use the LocalStrategy within Passport to register/"signup" users.
+passport.use('local-signup', new LocalStrategy(
+  {passReqToCallback : true}, //allows us to pass back the request to the callback
+  function(req, username, password, done) {
+    funct.localReg(username, password)
+    .then(function (user) {
+      if (user) {
+        console.log("REGISTERED: " + user.username);
+        req.session.success = 'You are successfully registered and logged in ' + user.username + '!';
+        done(null, user);
+      }
+      if (!user) {
+        console.log("COULD NOT REGISTER");
+        req.session.error = 'That username is already in use, please try a different one.'; //inform user could not log them in
+        done(null, user);
+      }
+    })
+    .fail(function (err){
+      console.log(err.body);
+    });
+  }
+));
 
 //===============PORT=================
 app.listen(port, function(){
