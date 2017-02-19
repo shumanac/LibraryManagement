@@ -8,11 +8,49 @@ var router = express.Router();
 var appRoutes = require('./app/routes/api')(router);
 var path = require('path');
 
+var methodOverride = require('method-override'),
+    session = require('express-session'),
+    passport = require('passport'),
+    LocalStrategy = require('passport-local'),
+    TwitterStrategy = require('passport-twitter'),
+    GoogleStrategy = require('passport-google'),
+    FacebookStrategy = require('passport-facebook');
+
 app.use(morgan('dev'));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.static(__dirname + '/public'));
-app.use('/api', appRoutes);
+//app.use('/api', appRoutes);
+
+
+app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(session({secret: 'supernova', saveUninitialized: true, resave: true}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Session-persisted message middleware
+app.use(function(req, res, next){
+  var err = req.session.error,
+      msg = req.session.notice,
+      success = req.session.success;
+
+  delete req.session.error;
+  delete req.session.success;
+  delete req.session.notice;
+
+  if (err) res.locals.error = err;
+  if (msg) res.locals.notice = msg;
+  if (success) res.locals.success = success;
+
+  next();
+});
+
+
+
+
+
+
+
 
 
 mongoose.connect('mongodb://localhost:27017/library', function(err){
@@ -22,6 +60,20 @@ mongoose.connect('mongodb://localhost:27017/library', function(err){
         console.log('Successfully connected to mongodb');
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 app.get('*', function(req, res){
