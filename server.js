@@ -5,7 +5,6 @@ var mongoose = require('mongoose');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var router = express.Router();
-//var appRoutes = require('./app/routes/api')(router);
 var path = require('path');
 var flash = require('connect-flash');
 
@@ -27,7 +26,7 @@ var app = express();
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-//app.use('/api', appRoutes);
+
 
 
 //view engine
