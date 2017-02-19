@@ -89,7 +89,7 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-app.post('/login',
+router.post('/login',
   passport.authenticate('local', {successRedirect:'/', failureRedirect:'/users/login', failureFlash: true}),
   function(req, res) {
     res.redirect('/');

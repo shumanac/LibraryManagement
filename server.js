@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 var router = express.Router();
 var path = require('path');
 var flash = require('connect-flash');
-
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
 //var methodOverride = require('method-override'),
 var exphbs = require('express-handlebars');
 var session = require('express-session');
