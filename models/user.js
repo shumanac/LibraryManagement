@@ -3,8 +3,10 @@ var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
 
 
+
 mongoose.connect('mongodb://localhost:27017/libraryApp');
 var db = mongoose.connection;
+
 
 
 var UserSchema = new Schema({

@@ -1,24 +1,52 @@
 var express = require('express');
 var router = express.Router();
-var assert = require('assert');
+var Book = require('../models/book');
 
-var url = 'mongodb://localhost:27017/libraryApp';
 
-router.get('/get-data', function(req, res, next){
-    
-    
-})
+///* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index');
+});
 
-router.post('/insert', function(req, res, next){
-    
-} );
+router.get('/get-data', function(req, res, next) {
+  Book.find()
+      .then(function(doc) {
+        res.render('index', {items: doc});
+      });
+});
 
-router.post('/update', function(req, res, next){
-    
-} );
+router.post('/insert', function(req, res, next) {
+  var item = {
+    title: req.body.title,
+    content: req.body.content,
+    author: req.body.author
+  };
 
-router.post('/delete', function(req, res, next){
-    
-} );
+  var data = new Book(item);
+  data.save();
 
-module.exports =router;
+  res.redirect('/');
+});
+
+router.post('/update', function(req, res, next) {
+  var id = req.body.id;
+
+  Book.findById(id, function(err, doc) {
+    if (err) {
+      console.error('error, no entry found');
+    }
+    doc.title = req.body.title;
+    doc.content = req.body.content;
+    doc.author = req.body.author;
+    doc.save();
+  })
+  res.redirect('/');
+});
+
+router.post('/delete', function(req, res, next) {
+  var id = req.body.id;
+  Book.findByIdAndRemove(id).exec();
+  res.redirect('/');
+});
+
+module.exports = router;

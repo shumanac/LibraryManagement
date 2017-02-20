@@ -58,6 +58,13 @@ router.post('/register', function(req, res){
     }
 });
 
+router.get('/register', function(req, res, next){
+    var messages = req.flash('error');
+    res.render('users/register', {csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
+});
+
+
+
 //passport for login
 
 passport.use(new LocalStrategy(
