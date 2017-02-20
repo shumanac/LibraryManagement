@@ -17,11 +17,10 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>title</th>
-					<th>summary</th>
-					<th>borrowed</th>
-					<th>quantity</th>
-					<th>picture</th>
+					<th>Title</th>
+					<th>Summary</th>
+					<th>Borrowed</th>
+					<th>Quantity</th>
 					<th>Action</th>
 					<th>Update</th>
 				</tr>
@@ -32,7 +31,6 @@
 					<td><input class="form-control" ng-model="book.summary" /></td>
 					<td></td>
 					<td><input class="form-control" ng-model="book.quantity" type="number" /></td>
-					<td><input class="form-control" ngf-select ng-model="book.picture" type="file" /></td>
 					<td><button class="btn btn-primary" ng-click="addBook()">Add Book</button></td>
 					<td><button class="btn btn-info" ng-click="update()">Update</button><button class="btn btn-info" ng-click="deselect()">Clear</button></td>
 				</tr>
@@ -62,9 +60,6 @@
     </div> <!-- /container -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
-	<script src="../controllers/node_modules/ng-file-upload/dist/ng-file-upload-shim.js"></script>
-	<!-- for no html5 browsers support -->
-	<script src="../controllers/node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
 	<script src="../controllers/book.js"></script>
 </body>
 
