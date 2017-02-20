@@ -1,30 +1,58 @@
- <!-- Main jumbotron for a primary marketing message or call to action -->
+
+        <!DOCTYPE>
+<html ng-app="bookApp">
+
+
+<body>
+     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Welcome to Book's World</h1>
-        <p>Here you can add book to your collection and also contribute your own books to the library</p>
+        <h1>Welcome {{user.username}}</h1>
+        <p>Here you can add book to your collection</p>
       </div>
     </div>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
+	<div ng-controller="bookCtrl">
+		<h1>Books List</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>title</th>
+					<th>summary</th>
+					<th>borrowed</th>
+					<th>quantity</th>
+					<th>picture</th>
+					<th>Action</th>
+					<th>Update</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input class="form-control" ng-model="book.title" /></td>
+					<td><input class="form-control" ng-model="book.summary" /></td>
+					<td></td>
+					<td><input class="form-control" ng-model="book.quantity" type="number" /></td>
+					<td><input class="form-control" ngf-select ng-model="book.picture" type="file" /></td>
+					<td><button class="btn btn-primary" ng-click="addBook()">Add Book</button></td>
+					<td><button class="btn btn-info" ng-click="update()">Update</button><button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+				</tr>
+				</tr>
+				<tr ng-repeat="book in books">
+					<td>{{book.title}}</td>
+					<td>{{book.summary}}</td>
+					<td>{{book.borrowed}}</td>
+					<td>{{book.quantity}}</td>
+					<td ng-if="book.picture"><img width="150px" height="100px" src="/alt/img/{{book.picture}}"></td>
+					<td>
+						<div ng-repeat="(key, value) in book.users">
+							<button  ng-click="Throw(book,key)" ng-if="value">Throw {{key}}</button>
+						</div>
+					</td>
+					<td><button class="btn btn-danger" ng-click="remove(book.title)">Remove</button></td>
+					<td><button class="btn btn-warning" ng-click="get(book.title)">Edit</button></td>
+				</tr>
+			</tbody>
+		</table>
 
       <hr>
 
@@ -32,3 +60,50 @@
         <p>&copy; 2016 Company, Inc.</p>
       </footer>
     </div> <!-- /container -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
+	<script src="../controllers/node_modules/ng-file-upload/dist/ng-file-upload-shim.js"></script>
+	<!-- for no html5 browsers support -->
+	<script src="../controllers/node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
+	<script src="../controllers/book.js"></script>
+</body>
+
+</html>
+      <!-- Example row of columns -->
+<!--
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Your collected booklist</h2>
+          <p>See the list of books you have added to your profile </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Update your list by adding more books</h2>
+          <p><form action="/insert" method="post">
+        <div class="input">
+            <label for="name">Name of the book</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="input">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author">
+        </div>
+        <div class="input">
+            <label for="category">Category</label>
+            <input type="text" id="category" name="category">
+        </div>
+             <div class="input">
+            <label for="isbn">ISBN</label>
+            <input type="text" id="author" name="isbn">
+        </div>
+        <button type="submit">INSERT</button>
+    </form> </p>
+          
+       </div>
+        <div class="col-md-4">
+          <h2>Insert book details to order new one</h2>
+          <p></p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+-->
